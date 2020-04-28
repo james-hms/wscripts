@@ -1,0 +1,109 @@
+@ECHO OFF
+
+GOTO //////////////////////////////////////////////////
+
+REG Operation [Parameter List]
+
+  Operation  [ QUERY   | ADD    | DELETE  | COPY    |
+               SAVE    | LOAD   | UNLOAD  | RESTORE |
+               COMPARE | EXPORT | IMPORT  | FLAGS ]
+
+Return Code: (Except for REG COMPARE)
+
+  0 - Successful
+  1 - Failed
+
+For help on a specific operation type:
+
+  REG Operation /?
+
+Examples:
+
+  REG QUERY /?
+  REG ADD /?
+  REG DELETE /?
+  REG COPY /?
+  REG SAVE /?
+  REG RESTORE /?
+  REG LOAD /?
+  REG UNLOAD /?
+  REG COMPARE /?
+  REG EXPORT /?
+  REG IMPORT /?
+  REG FLAGS /?
+
+::::::::::::::::::::
+
+REG ADD KeyName [/v ValueName | /ve] [/t Type] [/s Separator] [/d Data] [/f]
+
+  KeyName  [\\Machine\]FullKey
+           Machine  Name of remote machine - omitting defaults to the
+                    current machine. Only HKLM and HKU are available on remote
+                    machines.
+           FullKey  ROOTKEY\SubKey
+           ROOTKEY  [ HKLM | HKCU | HKCR | HKU | HKCC ]
+           SubKey   The full name of a registry key under the selected ROOTKEY.
+
+  /v       The value name, under the selected Key, to add.
+
+  /ve      adds an empty value name (Default) for the key.
+
+  /t       RegKey data types
+           [ REG_SZ    | REG_MULTI_SZ | REG_EXPAND_SZ |
+             REG_DWORD | REG_QWORD    | REG_BINARY    | REG_NONE ]
+           If omitted, REG_SZ is assumed.
+
+  /s       Specify one character that you use as the separator in your data
+           string for REG_MULTI_SZ. If omitted, use "\0" as the separator.
+
+  /d       The data to assign to the registry ValueName being added.
+
+  /f       Force overwriting the existing registry entry without prompt.
+
+Examples:
+
+  REG ADD \\ABC\HKLM\Software\MyCo
+    Adds a key HKLM\Software\MyCo on remote machine ABC
+
+  REG ADD HKLM\Software\MyCo /v Data /t REG_BINARY /d fe340ead
+    Adds a value (name: Data, type: REG_BINARY, data: fe340ead)
+
+  REG ADD HKLM\Software\MyCo /v MRU /t REG_MULTI_SZ /d fax\0mail
+    Adds a value (name: MRU, type: REG_MULTI_SZ, data: fax\0mail\0\0)
+
+  REG ADD HKLM\Software\MyCo /v Path /t REG_EXPAND_SZ /d ^%systemroot^%
+    Adds a value (name: Path, type: REG_EXPAND_SZ, data: %systemroot%)
+    Notice:  Use the caret symbol ( ^ ) inside the expand string
+
+::::::::::::::::::::
+
+REG DELETE KeyName [/v ValueName | /ve | /va] [/f]
+
+  KeyName    [\\Machine\]FullKey
+    Machine  Name of remote machine - omitting defaults to the current machine.
+             Only HKLM and HKU are available on remote machines.
+    FullKey  ROOTKEY\SubKey
+    ROOTKEY  [ HKLM | HKCU | HKCR | HKU | HKCC ]
+    SubKey   The full name of a registry key under the selected ROOTKEY.
+
+  ValueName  The value name, under the selected Key, to delete.
+             When omitted, all subkeys and values under the Key are deleted.
+
+  /ve        delete the value of empty value name (Default).
+
+  /va        delete all values under this key.
+
+  /f         Forces the deletion without prompt.
+
+Examples:
+
+  REG DELETE HKLM\Software\MyCo\MyApp\Timeout
+    Deletes the registry key Timeout and its all subkeys and values
+
+  REG DELETE \\ZODIAC\HKLM\Software\MyCo /v MTU
+    Deletes the registry value MTU under MyCo on ZODIAC
+
+://////////////////////////////////////////////////
+
+::  Search
+

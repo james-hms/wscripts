@@ -1,0 +1,25 @@
+@ECHO OFF
+
+GOTO //////////////////////////////////////////////////
+
+
+nb --help
+
+Usage: launcher {options} arguments
+
+General options:
+  --help                show this help
+  --jdkhome <path>      path to J2SE JDK
+  -J<jvm_option>        pass <jvm_option> to JVM
+
+  --cp:p <classpath>    prepend <classpath> to classpath
+  --cp:a <classpath>    append <classpath> to classpath
+
+
+://////////////////////////////////////////////////
+
+
+::  Command script to launch Netbeans IDE
+
+"C:\Documents and Settings\xsoper\My Documents\netbeans\bin\nb.exe" --jdkhome "C:\Documents and Settings\xsoper\My Documents\j2sdk1.4.2_09"
+

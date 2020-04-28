@@ -1,0 +1,16 @@
+
+@ECHO OFF
+
+
+GOTO //////////////////////////////////////////////////
+
+
+FOR /F "tokens=*" %%G IN ('DIR /B /S *.class') DO DEL "%%G"
+
+
+://////////////////////////////////////////////////
+
+::  Delete all *.class files in directory & subdirectories
+
+FOR /F "tokens=*" %%G IN ('DIR /B /S C:\jetty\work\*FidelityOnline') DO RD /S /Q "%%G"
+

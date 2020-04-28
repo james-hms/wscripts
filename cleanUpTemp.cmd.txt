@@ -1,0 +1,6 @@
+@ECHO OFF
+
+rd /s /q "%USERPROFILE%\Local Settings\Temp"
+
+md "%USERPROFILE%\Local Settings\Temp"
+

@@ -1,0 +1,30 @@
+
+@ECHO OFF
+
+
+GOTO //////////////////////////////////////////////////
+
+
+shortcut name --> TFS_Server
+icon          --> %SystemRoot%\system32\mstsc.exe
+
+%SystemRoot%\system32\mstsc.exe /v:10.140.5.85 /w:1280 /h:800
+
+
+://////////////////////////////////////////////////
+
+if ""%1""=="""" GOTO noPARAM
+
+::  Use Remote Desktop protocol to connect to box
+
+%SystemRoot%\system32\mstsc.exe /v:%1 /w:1280 /h:800
+
+
+GOTO END
+
+:noPARAM
+
+ECHO "usage: %0 <ip address>"
+
+
+:END
