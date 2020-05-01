@@ -1,6 +1,22 @@
 @ECHO OFF
 
+GOTO //////////////////////////////////////////////////
+
+::  Windows XP
 rd /s /q "%USERPROFILE%\Local Settings\Temp"
 
 md "%USERPROFILE%\Local Settings\Temp"
+
+://////////////////////////////////////////////////
+
+::  Delete all *.lnk files in "Recent" directory
+
+FOR /F "tokens=*" %%G IN ('DIR /B /S %USERPROFILE%\AppData\Roaming\Microsoft\Windows\Recent\*.lnk') DO DEL /Q "%%G"
+
+
+::  Windows 10
+::  User variables -  %TEMP% , %TMP% 
+
+rd /s /q %USERPROFILE%\AppData\Local\Temp 
+md       %USERPROFILE%\AppData\Local\Temp 
 
