@@ -29,7 +29,7 @@ SET PATH=%PATH%;W:\wscripts
 ::  Call any other .cmd file
 CALL %~dp0git.env.cmd
 CALL %~dp0ant.env.cmd
-CALL %~dp0maven.env.cmd
+::  CALL %~dp0maven.env.cmd
 CALL %~dp0gradle.env.cmd
 CALL %~dp0nodejs.env.cmd
 CALL %~dp0java.env.cmd
