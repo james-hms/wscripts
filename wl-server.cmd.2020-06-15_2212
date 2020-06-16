@@ -2,13 +2,6 @@
 
 GOTO //////////////////////////////////////////////////
 
-::::::::::  WebLogic App Server
-
-  :: Default settings
-  JAVA Memory arguments: -Xms256m -Xmx512m -XX:CompileThreshold=8000 -XX:PermSize=128m  -XX:MaxPermSize=256m
-
-  :: As a general rule, set initial heap size (-Xms) equal to maximum heap size (-Xmx), to minimize garbage collection
-
 ::::::::::  Eclipse how does it
 
 C:\java\jdk8\bin\java -server -Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,address=8453,server=y,suspend=n -Djava.compiler=NONE 
@@ -77,9 +70,6 @@ if ""%2""==""0"" (
 ) else (
   TITLE %WEB_APP_TITLE%
   COLOR %WEB_APP_COLOR%
-
-    :: Increase WebLogic heap size
-    set USER_MEM_ARGS=-Xms1024m -Xmx1024m
 
     :: WebLogic App Server (JVM)
     set JAVA_OPTIONS=%JVM_DEBUG%

@@ -21,7 +21,7 @@ SET repo-vsts=https://c171437:clludnrlhhuxft4wbtbg7ozdwrexlllzvovuk42f6lxkydnff3
 
 ::         https://github.com/hmsholdings/cav-ecare-api.git
 ::         https://github.com/hmsholdings/cav-ecare-ui.git
-SET repo-gh=https://james-hms:c910e9b80f0023a21227278292d123c65c27dd1e@github.com/hmsholdings/
+SET repo-gh=https://james-hms:1c77ace0524457adfc4d0ad13aa0d0bd2cb96bf1@github.com/hmsholdings/
 
 
 SET GITDIR=W:\Git
