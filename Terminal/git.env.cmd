@@ -16,12 +16,12 @@ GOTO //////////////////////////////////////////////////
 
 ::         https://hmsholdings@dev.azure.com/hmsholdings/eCare/_git/eCare_API
 ::         https://hmsholdings@dev.azure.com/hmsholdings/eCare/_git/eCare_UI
-SET repo-vsts=https://c171437:clludnrlhhuxft4wbtbg7ozdwrexlllzvovuk42f6lxkydnff3ra@dev.azure.com/hmsholdings/eCare/_git/eCare_
+SET repo-vsts=https://c171437:%PAT-vsts%@dev.azure.com/hmsholdings/eCare/_git/eCare_
 
 
 ::         https://github.com/hmsholdings/cav-ecare-api.git
 ::         https://github.com/hmsholdings/cav-ecare-ui.git
-SET repo-gh=https://james-hms:1c77ace0524457adfc4d0ad13aa0d0bd2cb96bf1@github.com/hmsholdings/
+SET repo-gh=https://james-hms:%PAT-gh%@github.com/hmsholdings/
 
 
 SET GITDIR=W:\Git
