@@ -31,30 +31,46 @@ Listening for transport dt_socket at address: 8453
 
 if ""%1""=="""" GOTO howTO
 
-::::::::::  setup JVM Debugger variables
+
 set JVM_DEBUG_PORT=8453
 set JVM_DEBUG=-Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,address=%JVM_DEBUG_PORT%,server=y,suspend=n -Djava.compiler=NONE
 
 
-
+SET WEB_APP_TITLE=DEV database
 SET WEB_APP_COLOR=07
 
-::::::::::  pick which domain to launch
 if ""%1""==""ecare"" (
-  SET WEB_APP_TITLE=DEV DB eCare
   SET WEB_APP_LOC=local-eCARE
-) else (
-  SET WEB_APP_TITLE=DEV DB - server %1
-  SET WEB_APP_LOC=local-%1
-
-  ::  eCenter Core
-  SET CLASSPATH=D:\CA_Harvest\ecenter_jar\*;C:\Apps\eCenter\properties;%CLASSPATH%
 )
 
-:: set Log4J=-Dlog4j.debug -Dlog4j.configuration=log4j-dev.properties
-   set Log4J=-Dlog4j.debug
+if ""%1""==""ec1"" (
+  SET WEB_APP_LOC=local-ec1
 
-::::::::::  stop or start the Server
+  ::  eCenter Core
+  SET CLASSPATH=W:\CA_Harvest\ecenter_jar\*;C:\Apps\eCenter\properties;%CLASSPATH%
+)
+
+if ""%1""==""ecenter"" (
+  SET WEB_APP_LOC=local-eCenter
+
+  ::  eCenter Core
+  SET CLASSPATH=W:\CA_Harvest\ecenter_jar\*;C:\Apps\eCenter\properties;%CLASSPATH%
+)
+
+if ""%1""==""test"" (
+  SET WEB_APP_TITLE=TEST database
+  SET WEB_APP_COLOR=0E
+
+  SET WEB_APP_LOC=local-TEST
+
+  ::  eCenter Core
+  SET CLASSPATH=W:\CA_Harvest\ecenter_jar\*;C:\Apps\eCenter\properties;%CLASSPATH%
+)
+
+
+if ""%WEB_APP_LOC%""=="""" GOTO howTO
+
+
 if ""%2""==""0"" (
   ::  Stop Weblogic Application Server
   CALL C:\Apps\WebLogic\user_projects\domains\%WEB_APP_LOC%\bin\stopWebLogic.cmd
@@ -66,7 +82,7 @@ if ""%2""==""0"" (
     set USER_MEM_ARGS=-Xms1024m -Xmx1024m
 
     :: WebLogic App Server (JVM)
-    set JAVA_OPTIONS=%JVM_DEBUG%;%Log4J%
+    set JAVA_OPTIONS=%JVM_DEBUG%
 
     ::  Start Weblogic Application Server
     CALL C:\Apps\WebLogic\user_projects\domains\%WEB_APP_LOC%\startWebLogic.cmd
@@ -77,7 +93,7 @@ GOTO END
 
 :howTO
 
-ECHO "usage: %0 <server #> <[0 = stop]>"
+ECHO "usage: %0 <application [0 = stop] >"
 
 :END
 
