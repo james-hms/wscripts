@@ -72,4 +72,20 @@ This may be overridden with /-Y on the command line.
 
 ://////////////////////////////////////////////////
 
-XCOPY /E /I 
+if ""%2""=="""" GOTO noPARAM
+
+::  Use this to copy directories only
+
+XCOPY /E /I /F /H %1 %2
+
+GOTO END
+
+:noPARAM
+
+ECHO.
+ECHO // create [destinationDir] first, then copy contents
+ECHO.
+ECHO "usage: %0 sourceDirContents [destinationDir]"
+ECHO.
+
+:END
