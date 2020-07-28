@@ -47,8 +47,8 @@ if ""%1""==""ecare"" (
   SET WEB_APP_TITLE=DEV DB - server %1
   SET WEB_APP_LOC=local-%1
 
-  ::  SET CLASSPATH=D:\CA_Harvest\ecenter_jar\*;C:\Apps\eCenter\properties;%CLASSPATH%
-  SET CLASSPATH=C:\Apps\eCenter\properties;%CLASSPATH%
+  ::  eCenter Core
+  SET CLASSPATH=D:\CA_Harvest\ecenter_jar\*;C:\Apps\eCenter\properties;%CLASSPATH%
 )
 
 :: set Log4J=-Dlog4j.debug -Dlog4j.configuration=log4j-dev.properties
