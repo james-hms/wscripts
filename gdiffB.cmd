@@ -54,7 +54,21 @@ See 'git help git' for an overview of the system.
 
 git clone https://[username]:[token]@github.com/[organization]/[repo].git
 
+git diff branch1..branch2
 
 ://////////////////////////////////////////////////
 
-git config --list --show-origin
+if ""%2""=="""" GOTO howTO
+
+::  Compare 2 branches, top level down
+git diff %1..%2
+
+
+GOTO END
+
+:howTO
+
+ECHO "usage: %0 <branch1> <branch2>"
+
+:END
+
