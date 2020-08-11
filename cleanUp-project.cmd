@@ -13,13 +13,16 @@ RD [/S] [/Q] [drive:]path
 
     /Q      Quiet mode, do not ask if ok to remove a directory tree with /S
 
+
+::::  Eclipse directory (keep)
+rd /s /q %1\.settings
+
 ://////////////////////////////////////////////////
 
 if ""%1""=="""" GOTO noPARAM
 
 rd /s /q %1\bin
 rd /s /q %1\build
-rd /s /q %1\.settings
 
 GOTO END
 
