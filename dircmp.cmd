@@ -107,7 +107,13 @@ Run merge conflict resolution tools to resolve merge conflicts
 git-config(1)
 Get and set repository or global options
 
+:::::::::::
+
+SET GITDIR=W:\Git
+SET PATH=%GITDIR%\cmd;%PATH%
+
 
 ://////////////////////////////////////////////////
 
-C:\PROGRA~2\Meld\Meld.exe .
+::  Git needs to be enabled (version control view)
+start C:\PROGRA~2\Meld\Meld.exe .
