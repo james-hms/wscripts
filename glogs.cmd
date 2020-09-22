@@ -47,15 +47,6 @@ Other
 
 ://////////////////////////////////////////////////
 
-if ""%1""=="""" GOTO noPARAM
+git --no-pager log > %TEMP%\git-commit.log
 
-:: display the # of lines for the git log
-git --no-pager log -n %1 --oneline
-
-GOTO END
-
-:noPARAM
-
-git --no-pager log --oneline
-
-:END
+start %USERPROFILE%\HDD\Notepad2\Notepad2.exe %TEMP%\git-commit.log
