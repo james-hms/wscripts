@@ -1,0 +1,47 @@
+
+Profile Corporate on interface Wi-Fi: 
+======================================================================= 
+
+Applied: All User Profile    
+
+Profile information 
+------------------- 
+    Version                : 1
+    Type                   : Wireless LAN
+    Name                   : Corporate
+    Control options        : 
+        Connection mode    : Connect automatically
+        Network broadcast  : Connect even if this network is not broadcasting
+        AutoSwitch         : Do not switch to other networks
+        MAC Randomization  : Disabled
+
+Connectivity settings 
+--------------------- 
+    Number of SSIDs        : 1
+    SSID name              : "Corporate"
+    Network type           : Infrastructure
+    Radio type             : [ Any Radio Type ]
+    Vendor extension          : Not present
+
+Security settings 
+----------------- 
+    Authentication         : WPA2-Enterprise
+    Cipher                 : CCMP
+    Authentication         : WPA2-Enterprise
+    Cipher                 : GCMP
+    FIPS mode              : Disabled
+    Security key           : Absent
+    802.1X                 : Enabled
+    EAP type               : Microsoft: Protected EAP (PEAP)
+    802.1X auth credential : Machine credential
+    Cache user information : Yes
+
+Cost settings 
+------------- 
+    Cost                   : Unrestricted
+    Congested              : No
+    Approaching Data Limit : No
+    Over Data Limit        : No
+    Roaming                : No
+    Cost Source            : Default
+

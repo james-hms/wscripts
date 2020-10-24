@@ -45,12 +45,18 @@ Other
     --show-scope          show scope of config (worktree, local, global, system, command)
     --default <value>     with --get, use default value when missing entry
 
-:::
+:::::
 
-%0 - script name
-%1 - 1st command line parameter
-%2 - 2nd command line parameter  (and so on till %9)
-%* - ALL command line parameters (excluding the script name itself)
+Git Config Levels:
+  --system    ( [path]/etc/gitconfig )
+  --global    ( ~/.gitconfig )
+  --local     ( .git/config )   //  default
+
+::: Each of these "levels" (system, global, local) overwrites values in the previous level
+
+
+:: Setting below helps avoid being prompted for credentials
+git config --system credential.helper manager-core
 
 
 ://////////////////////////////////////////////////
