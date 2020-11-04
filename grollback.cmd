@@ -50,21 +50,19 @@ to read about a specific subcommand or concept.
 See 'git help git' for an overview of the system.
 
 
-::::::::::  git reset <pathspec> is the opposite of git add <pathspec>
+::::::::::  --soft – The staged snapshot and working directory are not altered in any way.
 
 
 ://////////////////////////////////////////////////
 
-if ""%1""=="""" GOTO howTO
+echo.
+choice /T 5 /M "Are you sure you want to Rollback the latest commit" /D n
 
-::  Remove file from staging area, 1 by 1
-git reset %1
+if %ERRORLEVEL% equ 2 goto END
 
-GOTO END
+::  Rollback the latest commit by one
+git reset --soft HEAD~1
 
-:howTO
-
-ECHO "usage: %0 <file>"
 
 :END
-
+echo.
