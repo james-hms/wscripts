@@ -36,6 +36,10 @@ CALL %~dp0java.env.cmd
 ::   CALL %~dp0python.env.cmd
 
 
+IF DEFINED ZORRO (SET VSC=C:\Apps\VSCodium\bin) ELSE (SET VSC=W:\VSCode\bin)
+SET PATH=%PATH%;%VSC%
+
+
 ::  START /B /D%HOMEDRIVE%\
 START /B /DW:\
 TITLE CMD

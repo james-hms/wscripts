@@ -57,15 +57,26 @@ USAGE: gradle [option...] [task...]
 
 gradle -v
 
+Welcome to Gradle 5.4!
+
+Here are the highlights of this release:
+ - Run builds with JDK12
+ - New API for Incremental Tasks
+ - Updates to native projects, including Swift 5 support
+
+For more details see https://docs.gradle.org/5.4/release-notes.html
+
+
 ------------------------------------------------------------
-Gradle 4.1
+Gradle 5.4
 ------------------------------------------------------------
 
-Build time:   2017-08-07 14:38:48 UTC
-Revision:     941559e020f6c357ebb08d5c67acdb858a3defc2
+Build time:   2019-04-16 02:44:16 UTC
+Revision:     a4f3f91a30d4e36d82cc7592c4a0726df52aba0d
 
-Groovy:       2.4.11
-Ant:          Apache Ant(TM) version 1.9.6 compiled on June 29 2015
+Kotlin:       1.3.21
+Groovy:       2.5.4
+Ant:          Apache Ant(TM) version 1.9.13 compiled on July 10 2018
 JVM:          1.8.0_221 (Oracle Corporation 25.221-b11)
 OS:           Windows 10 10.0 amd64
 
