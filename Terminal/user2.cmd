@@ -8,11 +8,6 @@ GOTO //////////////////////////////////////////////////
 ::  ECHO %~f0  -- complete path & filename of running script
 ::  ECHO %~dp0 -- complete path of running script
 
-::  code.cmd
-VSC=W:\VSCode\bin
-
-::  codium.cmd
-VSC=C:\Apps\VSCodium\bin
 
 ://////////////////////////////////////////////////
 
