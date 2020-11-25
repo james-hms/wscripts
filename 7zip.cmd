@@ -73,17 +73,17 @@ Usage: 7z <command> [<switches>...] <archive_name> [<file_names>...]
 
 ://////////////////////////////////////////////////
 
-if ""%2""=="""" GOTO noPARAM
+if ""%1""=="""" GOTO noPARAM
 
-::  Create the *.7z file from the specified directory
+::  Create the *.7z file
 
-7z a -t7Z %1 %2
+7z a -t7Z %1
 
 GOTO END
 
 :noPARAM
 
-ECHO "usage: %0 <archive.7z> <directory>"
+ECHO "usage: %0 <archive.7z>"
 
 :END
 

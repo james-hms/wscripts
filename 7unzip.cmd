@@ -73,18 +73,17 @@ Usage: 7z <command> [<switches>...] <archive_name> [<file_names>...]
 
 ://////////////////////////////////////////////////
 
-if ""%2""=="""" GOTO noPARAM
+if ""%1""=="""" GOTO noPARAM
 
-::  Extract the *.7z file into the specified directory
+::  Extract the *.7z file
 
-7z x -t7Z %1 -o%2
-
+7z x -t7Z %1
 
 GOTO END
 
 :noPARAM
 
-ECHO "usage: %0 <archive.7z> <directory>"
+ECHO "usage: %0 <archive.7z>"
 
 :END
 
